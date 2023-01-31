@@ -21,4 +21,8 @@ wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/FiraCode.z
 unzip FiraCode.zip -d ~/.fonts
 
 fc-cache -fv
+
+echo "[-] Removendo arquivos [-]"
+rm JetBrainsMono.zip CascadiaCode.zip CodeNewRoman.zip FiraCode.zip
+
 echo "done!"
