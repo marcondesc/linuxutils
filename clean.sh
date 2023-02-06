@@ -1,4 +1,4 @@
-#/bin/bash
+#! /bin/bash
 
 echo "clean partial packages"
 apt-get autoclean

@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /bin/bash
 
 # Checking whether script is being run as root
 
