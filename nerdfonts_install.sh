@@ -21,6 +21,12 @@ echo "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/FiraCode.
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/FiraCode.zip
 unzip FiraCode.zip -d ~/.fonts
 
+# Instala a fonte Cascadia Code da Microsoft
+# https://github.com/microsoft/cascadia-code/releases/download/v2407.24/CascadiaCode-2407.24.zip
+
+# instala fontes da Microsoft
+# sudo apt install ttf-mscorefonts-installer
+
 fc-cache -fv
 
 echo "[-] Removendo arquivos [-]"
