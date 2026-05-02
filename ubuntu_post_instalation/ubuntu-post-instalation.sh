@@ -56,7 +56,7 @@ install_git(){
     # configure git
     # git config --global user.name "Your Name"
     # git config --global user.email "your.email@example.com"
-    
+
     echo "done!"
 }
 
@@ -64,7 +64,7 @@ install_git(){
 install_eza(){
 # O eza é uma alternativa moderna e colorida ao comando tradicional ls no Linux.
 # Para instalar o eza no Ubuntu (especialmente nas versões 22.04 e 24.04),
-# a forma mais recomendada é utilizando o repositório oficial do projeto. 
+# a forma mais recomendada é utilizando o repositório oficial do projeto.
 
     echo -e "
     \e[32m#############################
@@ -108,7 +108,7 @@ install_alacritty(){
     \e[0m
     "
     sudo apt install alacritty -y
-    
+
     # Copiar o arquivo de configuração do Alacrity
     cp alacritty_toml_source.txt ~/.alacritty.toml
 
@@ -142,12 +142,15 @@ install_vivaldi(){
 
     # 2. Install the package (using apt is often better for dependency resolution)
     sudo apt install ./vivaldi-stable_amd64.deb -y
-    
+
     # 3. Remove downloaded .deb file
     rm ./vivaldi-stable_amd64.deb
 
     echo "done!"
 }
+
+# Instalar Zed (flatpak)
+# flatpak install flathub dev.zed.Zed
 
 # Instalar Sublime Text
 install_sublimetext(){
@@ -247,7 +250,7 @@ install_fonts(){
     unzip iafonts.zip -d iaFonts
     cp iaFonts/iA-Fonts-master/iA\ Writer\ Mono/Static/iAWriterMonoS-*.ttf /home/$username/.local/share/fonts
     rm -rf iafonts.zip iaFonts
-    
+
     echo "done!"
 
     echo -e "
@@ -263,7 +266,7 @@ install_fonts(){
 
     wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/CodeNewRoman.zip
     unzip CodeNewRoman.zip -d CodeNewRoman
-    cp CodeNewRoman/*.ttf /home/$username/.local/share/fonts 
+    cp CodeNewRoman/*.ttf /home/$username/.local/share/fonts
     rm -rf CodeNewRoman.zip CodeNewRoman
 
     wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/FiraCode.zip
@@ -315,7 +318,7 @@ install_gerenciadores_tarefas(){
     \e[0m
     "
     sudo apt install -y htop btop
-    
+
     echo "done!"
 }
 
@@ -335,7 +338,7 @@ install_fastfetch(){
 
     # 3. Instala o fastfetch
     sudo apt install fastfetch -y
-    
+
     echo "done!"
 }
 
@@ -347,7 +350,7 @@ install_vlc(){
     \e[0m
     "
     sudo apt install -y vlc
-    
+
     echo "done!"
 }
 
@@ -359,7 +362,7 @@ install_gparted(){
     \e[0m
     "
     sudo apt install -y gparted
-    
+
     echo "done!"
 }
 
@@ -379,7 +382,7 @@ install_ssh(){
     sudo apt install -y ufw gufw
     sudo ufw status # Para verificar o status
     sudo ufw allow ssh # Para permitir a porta 22
-    
+
     # instala o rsync
     sudo apt install rsync -y
 

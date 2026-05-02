@@ -22,9 +22,21 @@ echo "📦 Configurando repositórios externos..."
 sudo dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
                     https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
+# Instalando Gnome tweaks
+sudo dnf install gnome-tweaks
+
 # VS Code
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo
+sudo dnf check-update
+sudo dnf install -y code
+
+# Vivaldi
+sudo rpm --import https://repo.vivaldi.com/archive/linux_signing_key.pub
+sudo dnf config-manager --add-repo https://repo.vivaldi.com/archive/vivaldi-fedora.repo
+sudo dnf install -y vivaldi-stable
+
+
 
 # Vivaldi e Sublime Text
 sudo dnf config-manager --add-repo https://repo.vivaldi.com/archive/vivaldi-fedora.repo
@@ -39,7 +51,7 @@ echo "🛠️ Instalando ferramentas, editores e utilitários..."
 sudo dnf install -y \
     evince file-roller zip rar unrar unzip \
     net-tools curl git eza alacritty thunar fastfetch \
-    vivaldi-stable code sublime-text \
+    #vivaldi-stable code sublime-text \
     vlc rsync gparted albert openssh-server flatpak \
     dnf-plugins-core
 
